@@ -1,0 +1,15 @@
+# We need to consider all the cases and not convert what is not a field.
+# This is just tedious, not difficult. But since it is the same for all
+# there is a pattern, hence a rule, hence a regexp. Well: 4...
+#
+s/^\.@@NAME@@$/.@@NAME@@field/g
+s/^\.@@NAME@@\([^a-zA-Z0-9]\)/.@@NAME@@field\1/g
+s/\([^.]\)\.@@NAME@@$/\1.@@NAME@@field/g
+# There is a problem on multiple fields in the same line, since we
+# need to look before and _after_, and that changes the line in a way
+# that can't allow to apply to the remaining of the line. Hence we need
+# to loop.
+#
+: @@NAME@@
+s/\([^.]\)\.@@NAME@@\([^a-zA-Z0-9]\)/\1.@@NAME@@field\2/
+t @@NAME@@

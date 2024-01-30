@@ -1,0 +1,5 @@
+		Here are the KerTeX-M definable values
+
+KNUTH_SRC_DIR	[default: "../knuth"]
+	The directory where are Donald E. Knuth released sources.
+

@@ -1,0 +1,10 @@
+DATA = ../uniqids.sed
+
+FIELDS = int hh lh rh qqqq gr b0 b1 b2 b3 sc
+
+$(DATA): uniqids.sed.data chunk.data
+	sed '/^#/d' uniqids.sed.data >$@
+	for field in $(FIELDS); do\
+		sed -e '/^#/d' -e "s/@@NAME@@/$$field/g" chunk.data >>$@;\
+	done
+

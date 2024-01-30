@@ -1,0 +1,5 @@
+PROG = $(OBJDIR)/fixwrites
+
+COBJ =	fixwrites.o
+
+all: $(PROG)

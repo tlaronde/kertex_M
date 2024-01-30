@@ -1,0 +1,20 @@
+# There is a problem with the translation process at the moment, since
+# there is no scope handling for identifiers of different types and/or
+# different scopes with the same name.
+# The field membres lh and hh are also names of variables in METAFONT
+# sources. So we preprocess the Pascal code to replace the offending
+# identifiers, before feeding the source to pp2rc(1).
+#
+# Chunk taken from Web2C 5.0C. Comments added by [TL].
+#
+# input is from stdin; output to stdout.
+#
+# Even if members of "structure" are semantically tightly tied, they
+# may appear split on several lines. So we gather them
+: again
+/[^.]\.$/{
+	N
+	s/\.\n/\
+./
+	t again
+}

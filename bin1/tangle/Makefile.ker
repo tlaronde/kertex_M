@@ -1,0 +1,22 @@
+PROG = $(OBJDIR)/tangle
+
+COBJ =	tangle.o lib.o
+
+all: tangleboot $(PROG)
+
+$(COBJ): $(PROJECTDIR)/include/kertex.h
+
+tangleboot: tangleboot.c tangleboot.h lib.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o tangleboot tangleboot.c lib.c
+
+tangle.p tangle.pool:	$(KNUTH_SRC_DIR)/web/tangle.web tangle.ch
+	./tangleboot $(KNUTH_SRC_DIR)/web/tangle.web tangle.ch
+
+tangle.o: 	tangle.c web.h tangle.h
+lib.o: 	lib.c 
+
+tangle.c tangle.h: 	tangle.p ppdef.data
+	cat ppdef.data tangle.p \
+		| $(OBJDIR)/pp2rc -h web.h -c tangle \
+		| $(OBJDIR)/fixwrites >tangle.c
+

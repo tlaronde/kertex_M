@@ -1,0 +1,30 @@
+# These are the variables/macros that can be used in the conf.
+# The default are POSIX/X11 compliant ones.
+# $Id: KERTEX_M,v 1.27 2024/01/16 19:46:48 tlaronde Exp $
+#
+#  Copyright 2009, 2017, 2019--2020, 2024
+#      Thierry LARONDE <tlaronde@polynum.com>
+#  All rights reserved. 
+#  
+#  This work is under the KerGIS Public Licence v1.1
+# 
+#  See the COPYRIGHT file at the root of the source directory or see
+#  http://www.kergis.com/ for complete information.
+# 
+# !!!THIS SOFTWARE IS PROVIDED ``AS IS'' WITHOUT ANY WARRANTIES!!! 
+#                      USE IT AT YOUR OWN RISK 
+
+#========== THIS RISK COMP API
+# Need to tell with which RISK API the files were designed for
+# The RK_ prefix is reserved. Use another one for the project defined
+# variable.
+#
+RK_API_VERSION=1.20
+
+#========== USER CUSTOMIZABLE
+# see KERTEX_M.options for a description
+#
+KNUTH_SRC_DIR=${KNUTH_SRC_DIR:-"$PROJECTDIR/../knuth"}
+
+#========== INTERNALS - DO NOT TAMPER WITH THESE!
+CPPFLAGS="$CPPFLAGS -DT_TETRA=${T_TETRA:-long} -I$PROJECTDIR/include"

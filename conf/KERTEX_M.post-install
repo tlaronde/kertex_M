@@ -1,0 +1,18 @@
+# rkcomp post-install program for the KerGIS project
+#
+# $Id: KERTEX_M.post-install,v 1.2 2009/12/18 13:54:56 tlaronde Exp $
+#
+#  Copyright 2009 Thierry LARONDE <tlaronde@polynum.com>
+#  All rights reserved. 
+#  
+#  This work is under the KerGIS Public Licence v1.1
+# 
+#  See the COPYRIGHT file at the root of the source directory or see
+#  http://www.kergis.com/ for complete information.
+# 
+# !!!THIS SOFTWARE IS PROVIDED ``AS IS'' WITHOUT ANY WARRANTIES!!! 
+#                      USE IT AT YOUR OWN RISK 
+
+# No installation: tools stay on the Matrix.
+#
+exit 0

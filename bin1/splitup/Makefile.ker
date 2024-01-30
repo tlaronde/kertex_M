@@ -1,0 +1,5 @@
+PROG = $(OBJDIR)/splitup
+
+COBJ =	splitup.o
+
+all: $(PROG)

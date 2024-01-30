@@ -1,0 +1,9 @@
+#========== Nothing to install: stay on the Matrix; but build
+# sed translation for making ids uniq
+@ d * * $PROJECTDIR/sh1 *
+# binary conversion tools
+@ d * * $PROJECTDIR/bin1/pp2rc *
+@ d * * $PROJECTDIR/bin1/fixwrites *
+@ d * * $PROJECTDIR/bin1/splitup *
+# bootstrapping and first conversion *
+@ d * * $PROJECTDIR/bin1/tangle *

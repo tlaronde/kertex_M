@@ -1,0 +1,18 @@
+USRI: 2.22
+VERSION: 1.1.0.2
+VENDOR: polynum
+FLAGS: PUBLISHED
+LANG: C, POSIX.2
+NAME: KerTeX_M
+AUTHORS: Tomas Rokicki.
+	Tim Morgan.	
+	Thierry LARONDE <tlaronde@polynum.com>.
+DESCRIPTION: translation tools for KerTeX on the building Matrix.
+REQUIRE:
+ELEMENTS:
+LINK:
+DEPENDS: 1003.1 1003.2
+BUILD_DEPENDS:
+RUN_DEPENDS:
+PROVIDE:
+COMMENTS:

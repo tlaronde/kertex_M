@@ -1,0 +1,17 @@
+PROG = $(OBJDIR)/pp2rc
+
+COBJ =	parser.o lexer.o pp2rc.o
+
+XYFLAGS = -dv
+
+all: $(PROG)
+	cp ppdef.data $(OBJDIR)
+
+$(COBJ): $(PROJECTDIR)/include/kertex.h
+lexer.o:	lexer.c pp2rc.h parser.h symtab.h 
+parser.o:	parser.c pp2rc.h symtab.h
+pp2rc.o:	pp2rc.c symtab.h parser.h
+
+lexer.c:	lexer.l
+parser.c parser.h:	parser.y
+
